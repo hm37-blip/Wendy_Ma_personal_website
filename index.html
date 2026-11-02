@@ -93,13 +93,15 @@
     .project-link {align-self:start;display:inline-flex;align-items:center;gap:9px;font-weight:740;color:var(--blue);font-size:12px;margin-top:18px}
     .project-link:hover {text-decoration:underline;text-underline-offset:4px}
     .project-link svg {width:13px;height:13px}
-    .secondary-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .secondary-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
     .small-visual {height:192px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
     .visual-ds {background:linear-gradient(140deg,#e6f3fc,#d8e9ff)}
     .ds-board {width:79%;height:132px;background:white;border:1px solid #d8e4f2;box-shadow:0 9px 30px rgba(37,83,132,.12);border-radius:10px;padding:14px 15px;position:relative;transform:rotate(-4deg)}
     .ds-label {font-size:10px;color:#8095af;font-weight:750;letter-spacing:.08em}
     .ds-number {font-size:30px;letter-spacing:-.07em;font-weight:820;color:#244677}
     .ds-board svg {width:100%;height:53px;margin-top:-1px}
+    .visual-agtech {background:linear-gradient(125deg,#edf7f1,#d7eadd);padding:15px}
+    .visual-agtech img {height:100%;width:100%;object-fit:contain;filter:drop-shadow(0 6px 15px rgba(38,83,59,.07))}
     .visual-hci {background:linear-gradient(140deg,#eae9ff,#f4eaff)}
     .hci-svg {height:145px;width:80%}
     .hci-caption {position:absolute;bottom:16px;left:20px;font-size:10px;font-weight:760;letter-spacing:.13em;text-transform:uppercase;color:#8075aa}
@@ -135,7 +137,7 @@
       .hero-copy {font-size:15px}
       .project-visual {height:235px}
       .project-body {padding:22px;min-height:284px}
-      .secondary-grid {gap:13px}
+      .secondary-grid {gap:14px}
       .small-body {padding:17px}
       .about-content {padding:33px}
       .about-image,.about-image img {min-height:330px}
@@ -228,14 +230,14 @@
           <article class="project">
             <div class="project-visual visual-lileme">
               <div class="mascot-copy"><div class="visual-overline">WECHAT MINI PROGRAM</div><div class="visual-title">力了么<br>LiLeMe</div><div class="visual-subtitle">Algorithm practice, made social.</div></div>
-              <a class="mascot-frame" href="https://github.com/hm37-blip/Li-Le-Me" target="_blank" rel="noopener noreferrer" aria-label="Visit LiLeMe project on GitHub"><img src="assets/lileme-mascot.webp" alt="LiLeMe penguin mascot holding a Java mug and a keyboard" width="1000" height="1000" loading="lazy"></a>
+              <div class="mascot-frame"><img src="assets/lileme-mascot.webp" alt="LiLeMe penguin mascot holding a Java mug and a keyboard" width="1000" height="1000" loading="lazy"></div>
             </div>
             <div class="project-body">
               <div class="meta"><span>01 / Product leadership</span><span class="status">Launched</span></div>
               <h3>LiLeMe · 力了么 — Algorithm Practice Assistant</h3>
               <p class="description">Led a four-person team to launch a WeChat mini program for LeetCode practice, with progress tracking, squad leaderboards, and social motivation. Defined the MVP and coordinated delivery; early Day-2 retention was approximately 70%.</p>
               <div class="tags"><span>0→1 Product</span><span>WeChat Mini Program</span><span>Team Leadership</span></div>
-              <a class="project-link" href="https://github.com/hm37-blip/Li-Le-Me" target="_blank" rel="noopener noreferrer">View GitHub repository <span aria-hidden="true">↗</span></a>
+              <div id="lileme-link-slot"></div>
             </div>
           </article>
           <article class="project">
@@ -259,7 +261,7 @@
       <div class="wrap">
         <div class="section-head">
           <div><div class="section-kicker">02 / Data, research & AI</div><h2 id="more-title">Different tools. One mindset.</h2></div>
-          <p class="section-note">Evidence-led thinking across industry, HCI, and hackathons.</p>
+          <p class="section-note">Research and product thinking across industry, Sacks Lab, SALT Lab, and hackathons.</p>
         </div>
         <div class="secondary-grid">
           <article class="project">
@@ -274,12 +276,23 @@
             </div>
           </article>
           <article class="project">
+            <div class="small-visual visual-agtech">
+              <img src="assets/agtech-correlation.webp" alt="Preliminary correlation analysis of salt stress and recovery traits in miscanthus" width="1165" height="856" loading="lazy">
+            </div>
+            <div class="small-body">
+              <div class="meta"><span>04 / Sacks Lab · Research</span><span class="status status-progress">Research in progress</span></div>
+              <h3>Data-Driven Selection of Salinity-Tolerant Crops</h3>
+              <p class="description">Ongoing research on how miscanthus tolerates salt stress and recovers afterward. I analyze greenhouse data using statistics and clustering to explore patterns across plant traits. DNA results are pending before the study is complete.</p>
+              <div class="tags"><span>Python · K-Means</span><span>SAS · ANOVA</span><span>Phenomics</span></div>
+            </div>
+          </article>
+          <article class="project">
             <div class="small-visual visual-hci" aria-label="Decorative illustration of human and AI agent interactions">
               <svg class="hci-svg" viewBox="0 0 260 160" aria-hidden="true"><path d="M58 80 L128 36 L203 80 L132 129 Z" stroke="#9688cd" stroke-width="1.4" stroke-dasharray="5 6" fill="none"/><path d="M58 80 L203 80 M128 36 L132 129" stroke="#baaee5" stroke-width="1.2"/><circle cx="58" cy="80" r="25" fill="#7666be"/><circle cx="128" cy="36" r="21" fill="#af9ced"/><circle cx="203" cy="80" r="25" fill="#7666be"/><circle cx="132" cy="129" r="23" fill="#bba9ea"/><text x="58" y="84" font-size="10" text-anchor="middle" fill="white" font-weight="700">Human</text><text x="203" y="84" font-size="10" text-anchor="middle" fill="white" font-weight="700">Agent</text><text x="132" y="133" font-size="9" text-anchor="middle" fill="#493f7c" font-weight="700">Trust</text><text x="128" y="39" font-size="9" text-anchor="middle" fill="#493f7c" font-weight="700">A2A</text></svg>
               <div class="hci-caption">Human-centered AI research</div>
             </div>
             <div class="small-body">
-              <div class="meta"><span>04 / HCI research</span></div>
+              <div class="meta"><span>05 / HCI research</span></div>
               <h3>Human–AI Agent Interaction</h3>
               <p class="description">Co-first-author on a CHI 2027 submission studying human–AI interaction. I contributed user interviews and qualitative analysis; further manuscript details are not public during peer review.</p>
               <div class="tags"><span>User Interviews</span><span>Thematic Analysis</span><span>AI Trust</span></div>
@@ -291,7 +304,7 @@
               <div class="crop-mini">AI × AGRICULTURE</div>
             </div>
             <div class="small-body">
-              <div class="meta"><span>05 / Hackathon spotlight</span><span class="status">2nd place</span></div>
+              <div class="meta"><span>06 / Hackathon spotlight</span><span class="status">2nd place</span></div>
               <h3>CropMIND.ai</h3>
               <p class="description">Helped shape the product concept, data approach, and final pitch for a multi-agent, RAG-enabled agricultural AI solution. GenAI track runner-up.</p>
               <div class="tags"><span>PM & Data Lead</span><span>Product Concept</span><span>GenAI</span></div>
@@ -308,7 +321,7 @@
           <div class="about-content">
             <div class="section-kicker">03 / A little about me</div>
             <h2 id="about-title">Curiosity brought me here. Building keeps me going.</h2>
-            <p>My path started in crop science research, expanded through data science, and led me toward product management and human-computer interaction. I enjoy translating ambiguous problems into clear priorities — and bringing people together to build something useful.</p>
+            <p>My research journey began at the <strong>Sacks Lab</strong>, where I used statistical analysis and data science to study crop resilience, and continued at the <strong>SALT Lab</strong>, where I investigate human–AI interactions through user research. Working across both labs taught me to approach complex problems from different perspectives, connect evidence with real needs, and bring people together to build useful solutions.</p>
             <div class="about-detail">
               <a href="https://www.linkedin.com/in/wendy-ma-hm37/" target="_blank" rel="noopener noreferrer">Find me on LinkedIn ↗</a>
               <a href="mailto:hm37@illinois.edu">Email me ↗</a>
@@ -326,9 +339,16 @@
     <div class="wrap copyright">© 2026 Wendy (Hanzhang) Ma · Made with intention.</div>
   </footer>
   <script>
-    // Optional portfolio link: add CropMIND's deck URL later if permitted.
-    const OPTIONAL_LINKS = {cropmindDeck: ""};
-    for (const [key, slot, label] of [["cropmindDeck", "cropmind-link-slot", "View project pitch deck"]]) {
+    // Optional portfolio links: fill them in when you have the exact URLs.
+    // Empty strings intentionally hide the link rather than sending visitors to a wrong page.
+    const OPTIONAL_LINKS = {
+      lilemeGitHub: "https://github.com/hm37-blip/Li-Le-Me",
+      cropmindDeck: ""
+    };
+    for (const [key, slot, label] of [
+      ["lilemeGitHub", "lileme-link-slot", "View GitHub repository"],
+      ["cropmindDeck", "cropmind-link-slot", "View project pitch deck"]
+    ]) {
       const url = OPTIONAL_LINKS[key];
       if (!url || !/^https:\/\//.test(url)) continue;
       const anchor = document.createElement("a");
