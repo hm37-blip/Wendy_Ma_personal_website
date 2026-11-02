@@ -68,22 +68,19 @@
     .featured-grid {display:grid;grid-template-columns:1fr 1fr;gap:22px}
     .project {background:white;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
     .project-visual {height:278px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-    .visual-lileme {background:radial-gradient(circle at 82% 15%,rgba(115,170,255,.34),transparent 39%),linear-gradient(138deg,#12254f 5%,#234c93 55%,#3f6ac9 100%);color:white}
-    .visual-lileme::before {content:"";position:absolute;width:310px;height:310px;border:1px solid rgba(255,255,255,.15);border-radius:50%;top:-138px;right:-85px;box-shadow:0 0 0 65px rgba(255,255,255,.045),0 0 0 130px rgba(255,255,255,.025)}
-    .visual-lileme::after {content:"";position:absolute;width:240px;height:240px;border-radius:32px;transform:rotate(32deg);left:-130px;bottom:-170px;background:rgba(96,159,255,.19)}
-    .visual-copy {position:relative;z-index:1;text-align:center}
-    .visual-overline {text-transform:uppercase;letter-spacing:.21em;font-size:10px;font-weight:750;color:rgba(255,255,255,.62)}
-    .visual-lileme .visual-title {font-size:64px;line-height:1.1;letter-spacing:-.085em;font-weight:830;margin:16px 0 6px}
-    .visual-lileme .visual-title span {font-weight:510;letter-spacing:-.04em}
-    .visual-subtitle {font-size:13px;color:rgba(255,255,255,.77)}
-    .visual-build {background:#f3e8da;color:#263c65}
-    .visual-build::before {content:"";position:absolute;width:240px;height:240px;right:-75px;top:-55px;border:38px solid rgba(253,119,53,.82);border-radius:50%}
-    .visual-build::after {content:"";position:absolute;width:230px;height:230px;bottom:-150px;left:-90px;transform:rotate(25deg);background:#e1d4f3;border-radius:38px}
-    .visual-build .visual-copy {text-align:left;width:78%;margin-top:12px}
-    .visual-build .visual-overline {color:#a75e41}
-    .visual-build .visual-title {font-size:clamp(34px,4vw,48px);line-height:1.02;letter-spacing:-.065em;font-weight:850;margin:15px 0}
-    .visual-build .visual-subtitle {color:#786d66;font-weight:650;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
-    .visual-date {position:absolute;bottom:19px;right:22px;color:#946e5a;font-size:11px;font-weight:770;letter-spacing:.1em}
+    /* Preserve the full LiLeMe mascot and official Build screenshot — no face or art cropping. */
+    .visual-lileme {background:linear-gradient(128deg,#13254d 0%,#234776 64%,#315da5 100%);justify-content:space-between;padding:0 0 0 29px;color:white}
+    .mascot-copy {position:relative;z-index:2;width:43%;flex-shrink:0}
+    .mascot-copy .visual-overline {font-size:9px;letter-spacing:.15em;line-height:1.6}
+    .mascot-copy .visual-title {font-size:clamp(34px,3.3vw,47px);letter-spacing:-.065em;line-height:1.1;margin:11px 0 7px;font-weight:830}
+    .mascot-copy .visual-subtitle {font-size:12px;color:#cfddf8;line-height:1.5}
+    .mascot-frame {display:flex;width:56%;height:100%;align-items:center;justify-content:center;overflow:hidden;padding:14px 13px 14px 0}
+    .mascot-frame img {width:100%;height:100%;object-fit:contain;border-radius:15px}
+    .cover-link {display:flex;align-items:center;justify-content:center;width:100%;height:100%;position:relative}
+    .cover-link:focus-visible {outline:3px solid #d47d47;outline-offset:-5px}
+    .visual-build {background:linear-gradient(145deg,#f7f6f2,#fff4e9);padding:12px}
+    .visual-build .cover-link {border-radius:12px}
+    .build-image {width:100%;height:100%;object-fit:contain;border-radius:10px;filter:drop-shadow(0 8px 15px rgba(23,39,65,.09))}
     .project-body {padding:25px 26px 27px;display:flex;flex-direction:column;min-height:270px}
     .meta {display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:13px;flex-wrap:wrap}
     .meta span:first-child {font-size:10px;font-weight:790;letter-spacing:.12em;text-transform:uppercase;color:#7b8a9c}
@@ -163,6 +160,10 @@
       .section-note {display:none}
       .featured-grid,.secondary-grid {grid-template-columns:1fr}
       .project-visual {height:260px}
+      .visual-lileme {padding-left:20px}
+      .mascot-copy .visual-title {font-size:35px}
+      .mascot-copy .visual-subtitle {font-size:11px}
+      .mascot-frame {width:54%;padding:11px 8px 11px 0}
       .project-body,.small-body {min-height:0;padding:23px}
       .secondary-grid {gap:18px}
       .small-visual {height:210px}
@@ -225,21 +226,23 @@
         </div>
         <div class="featured-grid">
           <article class="project">
-            <div class="project-visual visual-lileme" aria-label="Typographic illustration for LiLeMe">
-              <div class="visual-copy"><div class="visual-overline">Student product · WeChat mini program</div><div class="visual-title">LiLeMe <span>力了么</span></div><div class="visual-subtitle">Building a better way to practice together.</div></div>
+            <div class="project-visual visual-lileme">
+              <div class="mascot-copy"><div class="visual-overline">WECHAT MINI PROGRAM</div><div class="visual-title">力了么<br>LiLeMe</div><div class="visual-subtitle">Algorithm practice, made social.</div></div>
+              <a class="mascot-frame" href="https://github.com/hm37-blip/Li-Le-Me" target="_blank" rel="noopener noreferrer" aria-label="Visit LiLeMe project on GitHub"><img src="assets/lileme-mascot.webp" alt="LiLeMe penguin mascot holding a Java mug and a keyboard" width="1000" height="1000" loading="lazy"></a>
             </div>
             <div class="project-body">
               <div class="meta"><span>01 / Product leadership</span><span class="status">Launched</span></div>
-              <h3>LiLeMe — From idea to working MVP</h3>
-              <p class="description">Led a four-person engineering team to build a student coding-practice community as a WeChat mini program. Shaped the MVP, coordinated implementation, and evaluated early engagement, including ~70% Day-2 retention.</p>
+              <h3>LiLeMe · 力了么 — Algorithm Practice Assistant</h3>
+              <p class="description">Led a four-person team to launch a WeChat mini program for LeetCode practice, with progress tracking, squad leaderboards, and social motivation. Defined the MVP and coordinated delivery; early Day-2 retention was approximately 70%.</p>
               <div class="tags"><span>0→1 Product</span><span>WeChat Mini Program</span><span>Team Leadership</span></div>
-              <div id="lileme-link-slot"></div>
+              <a class="project-link" href="https://github.com/hm37-blip/Li-Le-Me" target="_blank" rel="noopener noreferrer">View GitHub repository <span aria-hidden="true">↗</span></a>
             </div>
           </article>
           <article class="project">
-            <div class="project-visual visual-build" aria-label="Typographic graphic for Build for Illinois 2027">
-              <div class="visual-copy"><div class="visual-overline">A new kind of campus hackathon</div><div class="visual-title">BUILD FOR<br>ILLINOIS<br>2027<span style="color:#ed8751">.</span></div><div class="visual-subtitle">Build it. Improve it. Launch it.</div></div>
-              <div class="visual-date">JAN 29–31 · 2027</div>
+            <div class="project-visual visual-build">
+              <a class="cover-link" href="https://illini-builds.github.io/website/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Build for Illinois 2027 event website">
+                <img class="build-image" src="assets/build-for-illinois-cover.webp" alt="Build for Illinois 2027 website cover showing event details and its orange dragon mascot" width="1250" height="752" loading="lazy">
+              </a>
             </div>
             <div class="project-body">
               <div class="meta"><span>02 / 0→1 initiative</span><span class="status status-progress">In progress</span></div>
@@ -278,7 +281,7 @@
             <div class="small-body">
               <div class="meta"><span>04 / HCI research</span></div>
               <h3>Human–AI Agent Interaction</h3>
-              <p class="description">Co-first-author research on how people interpret oversight, trust, and accountability in multi-agent interactions, informed by interviews with 16 participants. Submitted to CHI 2027.</p>
+              <p class="description">Co-first-author on a CHI 2027 submission studying human–AI interaction. I contributed user interviews and qualitative analysis; further manuscript details are not public during peer review.</p>
               <div class="tags"><span>User Interviews</span><span>Thematic Analysis</span><span>AI Trust</span></div>
             </div>
           </article>
@@ -323,16 +326,9 @@
     <div class="wrap copyright">© 2026 Wendy (Hanzhang) Ma · Made with intention.</div>
   </footer>
   <script>
-    // Optional portfolio links: fill them in when you have the exact URLs.
-    // Empty strings intentionally hide the link rather than sending visitors to a wrong page.
-    const OPTIONAL_LINKS = {
-      lilemeGitHub: "",
-      cropmindDeck: ""
-    };
-    for (const [key, slot, label] of [
-      ["lilemeGitHub", "lileme-link-slot", "View GitHub repository"],
-      ["cropmindDeck", "cropmind-link-slot", "View project pitch deck"]
-    ]) {
+    // Optional portfolio link: add CropMIND's deck URL later if permitted.
+    const OPTIONAL_LINKS = {cropmindDeck: ""};
+    for (const [key, slot, label] of [["cropmindDeck", "cropmind-link-slot", "View project pitch deck"]]) {
       const url = OPTIONAL_LINKS[key];
       if (!url || !/^https:\/\//.test(url)) continue;
       const anchor = document.createElement("a");
